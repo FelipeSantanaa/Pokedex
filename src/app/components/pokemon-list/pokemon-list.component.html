@@ -1,0 +1,9 @@
+<main>
+  <div class="container pokemon-list">
+    <app-pokemon-card
+      *ngFor="let pokemon of (this.pokemons$ | async).results; index as i"
+      [pokemon]="pokemon"
+      [numero]="i + 1"
+    ></app-pokemon-card>
+  </div>
+</main>
