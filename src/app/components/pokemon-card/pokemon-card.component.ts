@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -15,8 +16,9 @@ export class PokemonCardComponent implements OnInit {
   @Input()
   numero!: number;
 
-  ngOnInit() {
-  }
+  constructor(private route: Router) {}
+
+  ngOnInit() {}
 
   imagemPokemon() {
     const numeroFormatado = this.leadingZero(this.numero);
@@ -31,5 +33,9 @@ export class PokemonCardComponent implements OnInit {
       s = '0' + s;
     }
     return s;
+  }
+
+  pokemonPage(pokemon: any) {
+    this.route.navigateByUrl(pokemon.name, { state: { pokemon: pokemon } });
   }
 }

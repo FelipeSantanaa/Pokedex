@@ -16,7 +16,7 @@ export class PokemonService {
     return this.http.get(`${this.baseURL}pokemon?limit=151`)
   }
 
-  public getPokemon(id: any): Observable<any>{
-    return this.http.get(`${this.baseURL}pokemon/${id}`)
+  public getPokemonByUrl(url: string){
+    return this.http.get(`${url}`)
   }
 }

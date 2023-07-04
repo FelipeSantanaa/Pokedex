@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { PokemonService } from 'src/app/service/pokemon.service';
 
@@ -17,7 +18,7 @@ export class PokemonListComponent implements OnInit {
     this.getAllPokemons()
   }
 
-constructor( private pokemonService: PokemonService){}
+constructor( private pokemonService: PokemonService, private route: Router){}
 
   getAllPokemons() {
     this.subscription.add(this.pokemonService.getPokemons().subscribe({
@@ -27,4 +28,5 @@ constructor( private pokemonService: PokemonService){}
       }
     }))
   }
+
 }
