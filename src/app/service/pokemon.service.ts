@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,6 +14,9 @@ export class PokemonService {
 
   public getPokemons(){
     return this.http.get(`${this.baseURL}pokemon?limit=151`)
+  }
 
+  public getPokemon(id: any): Observable<any>{
+    return this.http.get(`${this.baseURL}pokemon/${id}`)
   }
 }

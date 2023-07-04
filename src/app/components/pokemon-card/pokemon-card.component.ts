@@ -15,9 +15,7 @@ export class PokemonCardComponent implements OnInit {
   @Input()
   numero!: number;
 
-  @Input()
   ngOnInit() {
-    console.log(this.pokemon);
   }
 
   imagemPokemon() {

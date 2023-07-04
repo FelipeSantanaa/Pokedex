@@ -8,7 +8,7 @@ const routes: Routes = [
     path:'', component: PokemonListComponent
   },
   {
-    path: ':name', component: PokemonPageComponent
+    path: ':id', component: PokemonPageComponent
   }
 ];
 

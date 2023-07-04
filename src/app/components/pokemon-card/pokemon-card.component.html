@@ -1,8 +1,10 @@
 <div class="main">
-  <a routerLink="{{pokemon.name}}">
+  <a routerLink="{{ numero }}">
     <img [src]="imagemPokemon()" alt="Imagem do Pokémon" />
     <br />
-    <span>N° {{ leadingZero(this.numero) }} </span> <br />
-    <p>{{ pokemon.name }}</p>
+    <div class="ms-3 mt-1">
+      <span>N° {{ leadingZero(numero) }} </span> <br />
+      <p>{{ pokemon.name }}</p>
+    </div>
   </a>
 </div>
