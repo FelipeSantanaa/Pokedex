@@ -7,7 +7,13 @@ img{
 
 .main{
     padding-left: 30px;
+    cursor: pointer;
+    transition: transform .2s;
 }
+
+.main:hover {
+    transform: scale(1.1); 
+  }
 
 p{
     font-weight: bold;

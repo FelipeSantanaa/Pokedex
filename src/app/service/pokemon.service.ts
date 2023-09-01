@@ -12,8 +12,8 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  public getPokemons(){
-    return this.http.get(`${this.baseURL}pokemon?limit=151`)
+  public getPokemons(limit: number){
+    return this.http.get(`${this.baseURL}pokemon?limit=${limit}`)
   }
 
   public getPokemonByUrl(url: string){

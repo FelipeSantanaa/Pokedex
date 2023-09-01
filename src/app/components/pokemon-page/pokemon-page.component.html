@@ -1,1 +1,43 @@
-<p>pokemon-page works!</p>
+<div *ngIf="pokemonStats" class="container">
+  <!-- <h1 class="text-center">{{ pokemonStats.name | titlecase }}</h1>
+  <div class="images text-center">
+    <img
+      src="{{ pokemonStats.sprites.other.dream_world.front_default }}"
+      class=""
+      alt="${{pokemonStats.name}} image"
+    />
+    <br />
+  </div> -->
+
+  <div class="types">
+
+      <h4>Types</h4>
+
+      <!-- <h5 *ngIf="pokemonStats.types[0].type.name == 'grass'" class="type-grass">{{ pokemonStats.types[0].type.name }}</h5>
+    <h5 *ngIf="pokemonStats.types[1].type.name == 'poison'" class="type-poison">{{ pokemonStats.types[1].type.name }}</h5> -->
+   
+  </div>
+
+  <div class="row">
+    <h1 class="text-center">{{ pokemonStats.name | titlecase }}</h1>
+    <div class="col-6">
+      <div class="images text-center">
+        <img
+          src="{{ pokemonStats.sprites.other.dream_world.front_default }}"
+          class=""
+          alt="{{ pokemonStats.name }} image"
+        />
+        <br />
+      </div>
+    </div>
+    <div class="col-6">
+      Abilities
+      <br />
+      Types
+      <br />
+      Weaknesses
+    </div>
+  </div>
+
+  <div class="row"></div>
+</div>

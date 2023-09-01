@@ -1,0 +1,24 @@
+img{
+    width: 70%;
+}
+
+.images{
+    background-color: #F2F2F2;
+}
+
+.type-grass{
+    background-color: #9BCC50;
+    border-radius: 13px;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+
+.type-poison{
+    background-color: #B97FC9;
+    border-radius: 13px;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+}

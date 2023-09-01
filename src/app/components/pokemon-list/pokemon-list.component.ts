@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/service/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   subscription: Subscription = new Subscription();
+  limit: number = 10;
 
   _pokemons: BehaviorSubject<any> = new BehaviorSubject(new Array)
   pokemons$: Observable<any> = this._pokemons.asObservable();
@@ -21,7 +22,7 @@ export class PokemonListComponent implements OnInit {
 constructor( private pokemonService: PokemonService, private route: Router){}
 
   getAllPokemons() {
-    this.subscription.add(this.pokemonService.getPokemons().subscribe({
+    this.subscription.add(this.pokemonService.getPokemons(this.limit).subscribe({
       next: data => {
         this._pokemons.next(data)
         console.log(data)
