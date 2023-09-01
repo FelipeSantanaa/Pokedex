@@ -10,7 +10,7 @@ import { PokemonService } from 'src/app/service/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   subscription: Subscription = new Subscription();
-  limit: number = 10;
+  limit: number = 20;
 
   _pokemons: BehaviorSubject<any> = new BehaviorSubject(new Array)
   pokemons$: Observable<any> = this._pokemons.asObservable();
