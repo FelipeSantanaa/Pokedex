@@ -27,7 +27,7 @@ export class PokemonPageComponent implements OnInit {
   getPokemon() {
     this.pokemonService.getPokemonByUrl(this.pokemon.url).subscribe((x) => {
       this.pokemonStats = x;
-      console.log(this.pokemonStats);
+      console.log(x);
     });
   }
 }

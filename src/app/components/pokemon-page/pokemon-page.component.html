@@ -1,4 +1,4 @@
-<div *ngIf="pokemonStats" class="container">
+<div *ngIf="pokemonStats" class="px-5">
   <!-- <h1 class="text-center">{{ pokemonStats.name | titlecase }}</h1>
   <div class="images text-center">
     <img
@@ -10,32 +10,108 @@
   </div> -->
 
   <div class="types">
+    <h4>Types</h4>
 
-      <h4>Types</h4>
-
-      <!-- <h5 *ngIf="pokemonStats.types[0].type.name == 'grass'" class="type-grass">{{ pokemonStats.types[0].type.name }}</h5>
+    <!-- <h5 *ngIf="pokemonStats.types[0].type.name == 'grass'" class="type-grass">{{ pokemonStats.types[0].type.name }}</h5>
     <h5 *ngIf="pokemonStats.types[1].type.name == 'poison'" class="type-poison">{{ pokemonStats.types[1].type.name }}</h5> -->
-   
   </div>
 
   <div class="row">
-    <h1 class="text-center">{{ pokemonStats.name | titlecase }}</h1>
-    <div class="col-6">
+    <h1 class="text-center">{{ pokemonStats?.name | titlecase }}</h1>
+    <div class="col-3 pe-5">
       <div class="images text-center">
         <img
-          src="{{ pokemonStats.sprites.other.dream_world.front_default }}"
+          src="{{ pokemonStats?.sprites?.other?.dream_world?.front_default }}"
           class=""
-          alt="{{ pokemonStats.name }} image"
+          alt="{{ pokemonStats?.name }} image"
         />
         <br />
       </div>
     </div>
-    <div class="col-6">
-      Abilities
-      <br />
-      Types
-      <br />
-      Weaknesses
+    <div class="col-9 d-flex">
+      <div class="col-6">
+        <!-- Abilities -->
+        <h3>Abilities</h3>
+        <div *ngFor="let pokemonAbilities of pokemonStats?.abilities">
+          <h5>{{ pokemonAbilities.ability.name | titlecase }}</h5>
+        </div>
+        <br />
+
+        <!-- Types -->
+        <h3>Types</h3>
+        <div *ngFor="let pokemonTypes of pokemonStats?.types">
+          <div *ngIf="pokemonTypes.type.name == 'grass'">
+            <h5 style="color: green">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'poison'">
+            <h5 style="color: rgb(3, 83, 3)">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'fire'">
+            <h5 style="color: red">{{ pokemonTypes.type.name | titlecase }}</h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'normal'">
+            <h5 style="color: black">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'psychic'">
+            <h5 style="color: purple">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'water'">
+            <h5 style="color: rgb(17, 66, 173)">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'bug'">
+            <h5 style="color: rgb(165, 163, 42)">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+
+          <div *ngIf="pokemonTypes.type.name == 'flying'">
+            <h5 style="color: rgb(104, 42, 53)">
+              {{ pokemonTypes.type.name | titlecase }}
+            </h5>
+          </div>
+        </div>
+        <br />
+        Weaknesses
+      </div>
+
+      <div class="col-6 d-block">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Status Name</th>
+              <th scope="col">Status Base</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let status of pokemonStats?.stats; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ status.stat.name | titlecase }}</td>
+              <td>{{ status.base_stat }}</td>
+            </tr>
+            <tr></tr>
+          </tbody>
+        </table>
+
+        <!-- {{status.stat.name}}
+        {{status.base_stat}} -->
+      </div>
     </div>
   </div>
 

@@ -22,3 +22,7 @@ img{
     text-align: center;
     width: 30%;
 }
+
+.table{
+    --bs-table-bg: none !important;
+}
